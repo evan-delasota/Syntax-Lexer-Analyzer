@@ -1,5 +1,0 @@
-﻿  Lexer.cpp
-  Parser.cpp
-  Generating Code...
-C:\Users\evan_\source\repos\SyntaxAnalyzer\SyntaxAnalyzer\Parser.cpp(190): warning C4715: 'Parser::analyze': not all control paths return a value
-  SyntaxAnalyzer.vcxproj -> C:\Users\evan_\source\repos\SyntaxAnalyzer\Debug\SyntaxAnalyzer.exe
