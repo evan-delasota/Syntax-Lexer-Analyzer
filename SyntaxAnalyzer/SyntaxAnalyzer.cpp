@@ -16,9 +16,8 @@ int main() {
 	ss << fileInput.rdbuf();
 	fileInput.close();
 	try {
-		output = (!isnan(parser(ss.str()))) ? "Valid\n" : "Invalid\n";
+		output = (!isnan(parser(ss.str()))) ? "Valid Expression\n" : "Invalid Expression\n";
 		std::cout << output;
-
 	}
 	catch (const char* error) {
 		std::cout << error;

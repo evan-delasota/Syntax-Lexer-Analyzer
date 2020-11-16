@@ -34,8 +34,8 @@ Token Lexer::getToken() {
 	std::cout << "Token: Identifier		Lexeme: " << tokenBuffer << "\n";
 	input.putback(character);
 
-	if (tokenBuffer == "Int") return Token::Int;
-	
+	if (tokenBuffer == ";") return Token::Semicolon;
+
 	return Token::Id;
 
 	}

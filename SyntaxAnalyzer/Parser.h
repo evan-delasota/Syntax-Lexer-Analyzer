@@ -18,7 +18,6 @@ private:
 	double mulOrDivExpression();
 	double powerExpression();
 	double unaryExpression();
-	double getArg();
 	double analyze();
 
 };

@@ -3,7 +3,6 @@
 enum class Token {
 	Id,
 	Num,
-	Int,
 	Assign = '=',
 	Plus = '+',
 	Minus = '-',
@@ -13,5 +12,6 @@ enum class Token {
 	Pow = '^',
 	Lparen = '(',
 	Rparen = ')',
+	Semicolon = ';',
 	$ = -1		//EOF
 };

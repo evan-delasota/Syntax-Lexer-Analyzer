@@ -132,29 +132,6 @@ double Parser::unaryExpression()
 	}
 }
 
-// Returns value of argument, checks for open parenthesis 
-double Parser::getArg() {
-	double d = 0;
-
-	lexer->readNext();
-	if (lexer->getCurrToken() != Token::Lparen) {
-		throw ("Missing a '(' before function name.\n");
-		return d;
-	}
-
-	lexer->readNext();
-	d = addOrSubExpression();
-
-	if (lexer->getCurrToken() != Token::Rparen) {
-		throw ("Missing closing ')'\n");
-		return d;
-	}
-
-	lexer->readNext();
-	return d;
-
-}
-
 // Matches any valid operator, then recursively calls helper functions if necessary
 double Parser::analyze()
 {
@@ -181,10 +158,6 @@ double Parser::analyze()
 		lexer->readNext();
 		return d;
 
-	case Token::Int:
-		d = getArg();
-		if (d < 0)		 return ceil(d);
-		else			 return floor(d);
 	default:
 		throw ("Invalid expression\n");
 
