@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/SyntaxAnalyzer/v16
+/SyntaxAnalyzer/Debug
+*.vcxproj
+*.filters
+*.user

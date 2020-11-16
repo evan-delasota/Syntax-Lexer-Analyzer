@@ -10,6 +10,7 @@ void Lexer::readNext() {
 
 // Analyzes and returns token/lexeme pair
 Token Lexer::getToken() {
+	std::string s;
 	std::istream& input = *sourceInput;
 	tokenBuffer.clear();
 	char character = input.get();
@@ -30,11 +31,11 @@ Token Lexer::getToken() {
 			tokenBuffer += character;
 			character = input.get();
 		}
-
+	std::cout << "Token: Identifier		Lexeme: " << tokenBuffer << "\n";
 	input.putback(character);
 
 	if (tokenBuffer == "Int") return Token::Int;
-
+	
 	return Token::Id;
 
 	}
@@ -59,6 +60,7 @@ Token Lexer::getToken() {
 			}
 		}
 
+		std::cout << "Token: Number			Lexeme: " << tokenBuffer << "\n";
 		input.putback(character);
 		return Token::Num;
 	}
@@ -77,6 +79,8 @@ Token Lexer::getToken() {
 			tokenBuffer += character;
 			character = input.get();
 		}
+		std::cout << "Token: Number			Lexeme: " << tokenBuffer << "\n";
+
 
 		input.putback(character);
 		return Token::Num;
@@ -93,10 +97,11 @@ Token Lexer::getToken() {
 		case '^':
 		case '(':
 		case ')':
+			std::cout << "Token: Operator			Lexeme: " << tokenBuffer << "\n";
 			return Token(character);
 	}
 
-	std::cout << "Not a valid input\n";
-	return Token::$;
+	throw ("Not a valid input\n");
+	//return Token::$;
 
 }

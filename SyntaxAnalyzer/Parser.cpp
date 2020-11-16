@@ -31,6 +31,9 @@ double Parser::assignExpression()
 	double output = addOrSubExpression();
 
 	if (lexer->getCurrToken() == Token::Assign) {
+		if (token != Token::Id) {
+			throw ("Invalid assignment\n");
+		}
 		lexer->readNext();
 		return symbol_table[tokenText] = addOrSubExpression();
 
@@ -135,7 +138,7 @@ double Parser::getArg() {
 
 	lexer->readNext();
 	if (lexer->getCurrToken() != Token::Lparen) {
-		std::cout << "Missing a '(' before function name.\n";
+		throw ("Missing a '(' before function name.\n");
 		return d;
 	}
 
@@ -143,7 +146,7 @@ double Parser::getArg() {
 	d = addOrSubExpression();
 
 	if (lexer->getCurrToken() != Token::Rparen) {
-		std::cout << "Missing closing ')'\n";
+		throw ("Missing closing ')'\n");
 		return d;
 	}
 
@@ -172,7 +175,7 @@ double Parser::analyze()
 		lexer->readNext();
 		d = addOrSubExpression();
 		if (lexer->getCurrToken() != Token::Rparen) {
-			std::cout << "Missing closing ')' in expression\n";
+			throw ("Missing closing ')' in expression\n");
 			break;
 		}
 		lexer->readNext();
@@ -183,7 +186,7 @@ double Parser::analyze()
 		if (d < 0)		 return ceil(d);
 		else			 return floor(d);
 	default:
-		return d;
+		throw ("Invalid expression\n");
 
 	}
 
