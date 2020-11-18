@@ -4,7 +4,6 @@
 #include <fstream>
 
 #include "Parser.h"
-//#include "Lexer.h"
 
 int main() {
 	Parser parser;
@@ -37,7 +36,7 @@ int main() {
 		std::getline(std::cin, string);
 		if (!std::cin || string == "exit" || string == "quit") break;
 		
-		output = (!isnan(parser(string))) ? "Valid\n" : "Invalid\n";
+		output = (!isnan(parser(ss.str()))) ? "Valid Expression\n" : "Invalid Expression\n";
 		std::cout << output;
 
 	}

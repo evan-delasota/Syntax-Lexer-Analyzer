@@ -82,7 +82,6 @@ double Parser::mulOrDivExpression()
 		case Token::Div:
 			lexer->readNext();
 			d = powerExpression();
-			output /= d;
 			break;
 
 		case Token::Mod:

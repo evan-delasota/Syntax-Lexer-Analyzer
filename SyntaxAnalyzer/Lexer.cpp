@@ -31,9 +31,9 @@ Token Lexer::getToken() {
 			tokenBuffer += character;
 			character = input.get();
 		}
-	std::cout << "Token: Identifier		Lexeme: " << tokenBuffer << "\n";
 	input.putback(character);
 
+	std::cout << "Token: Identifier		Lexeme: " << tokenBuffer << "\n";
 	if (tokenBuffer == ";") return Token::Semicolon;
 
 	return Token::Id;
@@ -101,7 +101,13 @@ Token Lexer::getToken() {
 			return Token(character);
 	}
 
+	if (character == '$' || character == ';') {
+		if (character == ';') {
+			std::cout << "Token: Semicolon		Lexeme: " << tokenBuffer << "\n";
+		}
+		return Token::$;
+	}
+
 	throw ("Not a valid input\n");
-	//return Token::$;
 
 }
