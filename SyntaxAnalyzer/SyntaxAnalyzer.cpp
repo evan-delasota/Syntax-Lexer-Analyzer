@@ -24,6 +24,8 @@ int main() {
 
 	std::ofstream fileOutput("output.txt");
 	fileOutput << output;
+
+	system("pause");
 	return 0;
 
 	// Uncomment for user input in CLI

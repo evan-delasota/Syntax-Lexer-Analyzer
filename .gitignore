@@ -8,3 +8,6 @@
 *.filters
 *.user
 /SyntaxAnalyzerV1.5.zip
+/SyntaxAnalyzerFINAL.zip
+/Debug/output.txt
+/Debug/test.txt

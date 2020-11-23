@@ -64,7 +64,6 @@ Token Lexer::getToken() {
 		input.putback(character);
 		return Token::Num;
 	}
-
 	// If number starts with decimal
 	if (character == '.') {
 		tokenBuffer = character;
