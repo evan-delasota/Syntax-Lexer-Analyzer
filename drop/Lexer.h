@@ -35,9 +35,9 @@ private:
 	std::string tokenBuffer;
 
 	int memLocation = 4999;
-	int count = 0;
 	std::map<std::string, int> symbolMap;
 	std::string symbolType[1000];
+	int count = 0;
 };
 
 

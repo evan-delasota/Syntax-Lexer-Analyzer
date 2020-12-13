@@ -130,6 +130,4 @@ void Lexer::printSymbolTable() {
 	for (itr = symbolMap.begin(); itr != symbolMap.end(); ++itr) {
 		std::cout << itr->first << "\t\t" << itr->second << "\t\t\t" << symbolType[counter++] << "\n";
 	}
-
-	std::cout << "\n";
 }
