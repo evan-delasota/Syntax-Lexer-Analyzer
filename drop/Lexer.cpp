@@ -1,4 +1,5 @@
 #include "Lexer.h"
+int loopedValue = 0;
 
 // Reads incoming stream of tokens
 void Lexer::readNext() {
@@ -125,10 +126,12 @@ void Lexer::printSymbolTable() {
 	}
 	std::map<std::string, int>::iterator itr;
 	int counter = 0;
+	int extra = loopedValue;
 
 	std::cout << "\n\nIdentifier	Memory Location		Type\n";
 	for (itr = symbolMap.begin(); itr != symbolMap.end(); ++itr) {
-		std::cout << itr->first << "\t\t" << itr->second << "\t\t\t" << symbolType[counter++] << "\n";
+		std::cout << itr->first << "\t\t" << itr->second+(extra) << "\t\t\t" << symbolType[counter++] << "\n";
+		loopedValue++;
 	}
 
 	std::cout << "\n";

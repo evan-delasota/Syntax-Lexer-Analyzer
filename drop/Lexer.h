@@ -11,6 +11,7 @@
 
 #include "Token.h"
 
+
 class Lexer {
 public:
 	inline Lexer(std::istream& istream) : sourceInput{ &istream }, okToDelete{ false } { init(); }
@@ -34,8 +35,8 @@ private:
 	Token getToken();
 	std::string tokenBuffer;
 
-	int memLocation = 5000;
 	int count = 0;
+	int memLocation = 5000;
 	std::map<std::string, int> symbolMap;
 	std::string symbolType[1000];
 };
