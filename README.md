@@ -1,11 +1,10 @@
- Assignment 2 - Syntax Analyzer  
+Syntax Analyzer  
 
  November 18, 2020
 
  # Team members 
 
-
- Evan Delasota      evan.delasota@gmail.com  
+ Evan Delasota    edelasota@csu.fullerton.edu  
  Shyam Patel      shyamdp@csu.fullerton.edu 
  Gangju Li        ligangju@csu.fullerton.edu  
 
